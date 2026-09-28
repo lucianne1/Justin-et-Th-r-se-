@@ -1,28 +1,164 @@
-Je vais maintenant générer le site web complet pour le mariage de Justin et Thérèse, avec un design glamour aux couleurs rouge, blanc et noir, un compte à rebours dynamique, des sections fluides et riches, ainsi que le programme détaillé des événements.
-Mariage Justin & Thérèse
-CodePrévisualiser
-Télécharger
-            <!-- Call to Action 
-            Buttons -->
-            <div class="flex 
-            flex-col sm:flex-row 
-            items-center 
-            justify-center gap-4">
-                <a 
-                href="#programme" 
-                class="w-full 
-                sm:w-auto 
-                bg-brightRed 
-                hover:bg-glamRed 
-                text-white 
-                font-serifHeader 
-                tracking-wider 
-                px-8 py-3.5 
-                rounded-full 
-                shadow-lg 
-                transition-all 
-                transform 
-                hover:-translate-y
-                -0.5 text-sm 
-                uppercase">
-                    Découvrir le 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin & Thérèse - 02 Octobre 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--rouge:#b11226;--rouge2:#e63946;--noir:#0f0f0f;--blanc:#fffaf7;--or:#d4af37}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--noir);color:var(--blanc);font-family:'Montserrat',sans-serif;overflow-x:hidden;scroll-behavior:smooth}
+h1,h2{font-family:'Playfair Display',serif}
+.script{font-family:'Great Vibes',cursive}
+
+/* HERO */
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover; display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;position:relative}
+.hero::before{content:'';position:absolute;top:20px;left:20px;right:20px;bottom:20px;border:1px solid rgba(212,175,55,.4);pointer-events:none}
+.badge{border:1px solid var(--or);color:var(--or);padding:8px 22px;letter-spacing:4px;font-size:12px;margin-bottom:20px}
+.hero h1{font-size:70px;line-height:1;color:white}
+.hero h1 span{color:var(--rouge2);font-family:'Great Vibes',cursive;font-size:85px;font-weight:400}
+.date-hero{margin-top:15px;font-size:18px;letter-spacing:3px}
+.scroll-down{position:absolute;bottom:30px;animation:bounce 2s infinite;color:var(--or)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* COUNTDOWN */
+#countdown{display:flex;gap:15px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+.timebox{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);min-width:85px;padding:15px 10px;text-align:center}
+.timebox b{font-size:28px;color:var(--or);display:block}
+.timebox span{font-size:10px;letter-spacing:2px;opacity:.7}
+
+/* SECTIONS */
+section{padding:90px 20px;max-width:1100px;margin:auto}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:45px}
+.section-title p{color:var(--or);letter-spacing:4px;font-size:12px;margin-top:8px;text-transform:uppercase}
+.line{width:60px;height:2px;background:var(--rouge);margin:15px auto}
+
+/* LOVE STORY */
+.love{background:var(--blanc);color:var(--noir);max-width:100%;text-align:center}
+.love h2{color:var(--noir)} .love .script{color:var(--rouge);font-size:50px}
+
+/* PROGRAMME CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.card{background:linear-gradient(145deg,#1a1a1a,#121212);border:1px solid rgba(212,175,55,.2);padding:35px;position:relative;transition:.4s;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--rouge),var(--or))}
+.card:hover{transform:translateY(-8px);border-color:var(--or)}
+.card .icon{font-size:35px;margin-bottom:15px}
+.card h3{font-size:22px;margin-bottom:10px;color:var(--or)}
+.card .heure{color:var(--rouge2);font-weight:700;letter-spacing:1px;margin-bottom:15px;display:block}
+.card p{opacity:.85;line-height:1.7;font-size:15px}
+
+/* THEME */
+.theme{background:radial-gradient(circle at center,#2a0a0f,#0f0f0f);text-align:center;border-top:1px solid rgba(212,175,55,.2);border-bottom:1px solid rgba(212,175,55,.2);max-width:100%}
+.theme h2{font-size:60px} .theme .big{font-size:80px;color:var(--rouge2)}
+.hearts{font-size:30px;letter-spacing:10px;color:var(--or);margin:20px 0}
+
+/* MAP / LIEU */
+.adresse{background:var(--blanc);color:var(--noir);max-width:100%}
+.adresse-box{background:white;box-shadow:0 15px 40px rgba(0,0,0,.1);padding:30px;border-left:5px solid var(--rouge)}
+
+/* FOOTER */
+footer{background:black;text-align:center;padding:60px 20px;border-top:1px solid rgba(212,175,55,.3)}
+footer h2{font-size:50px} footer .script{color:var(--rouge2);font-size:55px}
+.btn{margin-top:25px;display:inline-block;background:linear-gradient(90deg,var(--rouge),var(--rouge2));color:white;padding:15px 35px;text-decoration:none;letter-spacing:2px;font-weight:700;border-radius:30px;transition:.3s}
+.btn:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(177,18,38,.4)}
+
+@media(max-width:600px){.hero h1{font-size:45px}.hero h1 span{font-size:55px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">SAVE THE DATE</div>
+  <h1>Justin <span>&</span> Thérèse</h1>
+  <div class="date-hero">VENDREDI 02 OCTOBRE 2026 • LUBUMBASHI</div>
+  <div id="countdown"></div>
+  <div class="scroll-down">▼ SCROLL ▼</div>
+</div>
+
+<section class="love">
+  <p class="script">Nous nous aimons</p>
+  <h2 style="font-size:38px">Deux cœurs, une même promesse</h2>
+  <div class="line"></div>
+  <p style="max-width:700px;margin:20px auto;line-height:1.8">Dans la joie et l'amour, nous avons l'immense honneur de vous convier à célébrer notre union. Un jour placé sous le signe de l'amour éternel, notre Saint-Valentin à nous.</p>
+  <p style="color:var(--rouge);font-weight:700;letter-spacing:3px;margin-top:20px">THÈME : LA SAINT-VALENTIN ❤️</p>
+</section>
+
+<section>
+  <div class="section-title">
+    <p>Le programme du grand jour</p>
+    <h2>Un Jour d'Exception</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">💍</div>
+      <h3>Mariage Civil</h3>
+      <span class="heure">VENDREDI 02 OCT • 10H00</span>
+      <p><b>Espace Saint Luc</b><br>22, Avenue de l'Étoile<br>Quartier Hewa Bora<br><br>Unissons-nous devant la loi et devant Dieu.</p>
+    </div>
+    <div class="card" style="border-color:var(--rouge)">
+      <div class="icon">⛪</div>
+      <h3>Bénédiction Nuptiale</h3>
+      <span class="heure">12H30</span>
+      <p><b>Paroisse Saint Jean</b><br>Avenue Ufira<br>Non loin de la station<br><br>Pour sceller notre amour sous la bénédiction divine.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🥂</div>
+      <h3>Soirée Dansante</h3>
+      <span class="heure">19H00 - AUBE</span>
+      <p><b>Salle Malaïka</b><br>33, Avenue Manzadi<br>Quartier Hewa Bora<br><br>Tenue : Chic & Glamour Rouge / Blanc / Noir<br>On danse jusqu'à l'aube !</p>
+    </div>
+  </div>
+</section>
+
+<section class="theme">
+  <div class="hearts">♥ ♥ ♥</div>
+  <h2 class="script big">La Saint-Valentin</h2>
+  <h2 style="color:var(--or)">Rouge Passion • Blanc Pureté • Noir Élégance</h2>
+  <p style="max-width:600px;margin:20px auto;opacity:.8;line-height:1.7">Venez habillés dans le thème. Le rouge pour l'amour qui nous unit, le blanc pour la pureté de notre engagement, le noir pour l'élégance d'un soir inoubliable.</p>
+</section>
+
+<section class="adresse">
+  <div class="section-title">
+    <p style="color:var(--rouge)">Lubumbashi</p>
+    <h2 style="color:var(--noir)">Nos Lieux de Célébration</h2>
+    <div class="line"></div>
+  </div>
+  <div class="grid">
+    <div class="adresse-box"><h3 style="color:var(--rouge)">📍 Civil - Saint Luc</h3><p>22, Ave de l'Étoile, Hewa Bora</p></div>
+    <div class="adresse-box"><h3 style="color:var(--rouge)">📍 Église - St Jean</h3><p>Avenue Ufira, près de la station</p></div>
+    <div class="adresse-box"><h3 style="color:var(--rouge)">📍 Fête - Malaïka</h3><p>33, Ave Manzadi, Hewa Bora</p></div>
+  </div>
+</section>
+
+<footer>
+  <p style="letter-spacing:5px;color:var(--or)">MERCI DE PARTAGER NOTRE JOIE</p>
+  <h2>Justin <span class="script">&</span> Thérèse</h2>
+  <p>02.10.2026 • Pour toujours</p>
+  <a class="btn" href="https://wa.me/?text=Je%20serai%20present%20au%20mariage%20de%20Justin%20et%20Therese%20le%202%20octobre%202026%20❤️" target="_blank">CONFIRMER SUR WHATSAPP</a>
+  <p style="margin-top:40px;opacity:.4;font-size:12px">Design with ❤️ by Dan - Lubumbashi</p>
+</footer>
+
+<script>
+// Compte à rebours jusqu'au 2 octobre 2026 10h00 Lubumbashi UTC+2
+const target = new Date("2026-10-02T10:00:00+02:00").getTime();
+function update(){
+  const now = new Date().getTime();
+  const d = target - now;
+  if(d<0){document.getElementById("countdown").innerHTML="<b style='color:#d4af37'>C'EST LE GRAND JOUR ! ❤️</b>";return}
+  const days=Math.floor(d/(1000*60*60*24));
+  const hours=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  const mins=Math.floor((d%(1000*60*60))/(1000*60));
+  const secs=Math.floor((d%(1000*60))/1000);
+  document.getElementById("countdown").innerHTML=`
+    <div class="timebox"><b>${days}</b><span>JOURS</span></div>
+    <div class="timebox"><b>${hours}</b><span>HEURES</span></div>
+    <div class="timebox"><b>${mins}</b><span>MIN</span></div>
+    <div class="timebox"><b>${secs}</b><span>SEC</span></div>`;
+}
+setInterval(update,1000);update();
+</script>
+</body>
+</html>
